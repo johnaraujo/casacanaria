@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://johnaraujo.github.io/casacanaria/sitemap.xml
+Sitemap: https://casacanaria.com.br/sitemap.xml

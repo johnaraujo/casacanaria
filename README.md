@@ -2,7 +2,7 @@
 
 Site de divulgação da **Casa Canária** — casa de praia por temporada em Barra de São Miguel, Alagoas.
 
-🔗 **No ar:** https://johnaraujo.github.io/casacanaria/
+🔗 **No ar:** https://casacanaria.com.br/
 💬 **Contato:** WhatsApp (82) 99976-7094
 
 ---
@@ -10,13 +10,31 @@ Site de divulgação da **Casa Canária** — casa de praia por temporada em Bar
 ## O que tem aqui
 
 ```
-index.html      página única (HTML semântico + dados estruturados Schema.org)
-style.css       estilos, mobile-first
-script.js       galeria, lightbox e configuração (WhatsApp, fotos)
-fotos/          33 fotos do anúncio, em duas resoluções (-sm = miniatura)
-sitemap.xml     mapa do site com as imagens, para o Google
+index.html      página em português — a fonte da verdade
+en/index.html   versão em inglês   (gerada)
+es/index.html   versão em espanhol (gerada)
+traduzir.py     gera en/ e es/ a partir do index.html
+style.css       estilos, mobile-first — compartilhado pelos três idiomas
+script.js       galeria, lightbox e textos dos três idiomas
+fotos/          fotos da casa, em duas resoluções (-sm = miniatura)
+sitemap.xml     mapa do site com as imagens e os hreflang
 robots.txt      libera a indexação e aponta o sitemap
+CNAME           domínio próprio do GitHub Pages
 ```
+
+## Traduções
+
+O `index.html` em português é a fonte da verdade. Depois de editá-lo:
+
+```bash
+python3 traduzir.py
+```
+
+As pastas `en/` e `es/` são recriadas com o mesmo layout. Se você escrever um
+texto novo, acrescente a tradução ao dicionário `TRADUCOES` do `traduzir.py` —
+o script avisa quando encontra um trecho sem tradução, então nada passa batido.
+As legendas das fotos e a lista de comodidades ficam no `script.js`, nos três
+idiomas.
 
 Site estático puro: sem build, sem dependências. É só editar e dar `git push`.
 
