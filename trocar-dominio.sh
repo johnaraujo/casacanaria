@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Troca o domínio do site em todos os arquivos.
-# Uso: ./trocar-dominio.sh casacaju.com.br
+# Uso: ./trocar-dominio.sh casacanaria.com.br
 set -euo pipefail
 
 if [ $# -ne 1 ]; then
-  echo "Uso: $0 <dominio>    (ex.: $0 casacaju.com.br)" >&2
+  echo "Uso: $0 <dominio>    (ex.: $0 casacanaria.com.br)" >&2
   exit 1
 fi
 

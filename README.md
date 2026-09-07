@@ -1,9 +1,9 @@
-# Casa Caju 🥥
+# Casa Canária 🏡
 
-Site de divulgação da **Casa Caju** — casa de praia por temporada em Barra de São Miguel, Alagoas.
+Site de divulgação da **Casa Canária** — casa de praia por temporada em Barra de São Miguel, Alagoas.
 
-🔗 **No ar:** https://johnaraujo.github.io/casacaju/
-🏠 **Anúncio oficial:** https://www.airbnb.com.br/rooms/33034679
+🔗 **No ar:** https://johnaraujo.github.io/casacanaria/
+💬 **Contato:** WhatsApp (82) 99976-7094
 
 ---
 
@@ -12,7 +12,7 @@ Site de divulgação da **Casa Caju** — casa de praia por temporada em Barra d
 ```
 index.html      página única (HTML semântico + dados estruturados Schema.org)
 style.css       estilos, mobile-first
-script.js       galeria, lightbox e configuração (Airbnb / WhatsApp)
+script.js       galeria, lightbox e configuração (WhatsApp, fotos)
 fotos/          33 fotos do anúncio, em duas resoluções (-sm = miniatura)
 sitemap.xml     mapa do site com as imagens, para o Google
 robots.txt      libera a indexação e aponta o sitemap
@@ -27,11 +27,12 @@ Site estático puro: sem build, sem dependências. É só editar e dar `git push
 Tudo o que muda com frequência está no topo do `script.js`:
 
 ```js
-const AIRBNB   = 'https://www.airbnb.com.br/rooms/33034679';
-const WHATSAPP = '';   // 55 + DDD + número, ex.: '5582999998888'
+const WHATSAPP = '5582999767094';   // 55 + DDD + número
+const MENSAGEM_WHATSAPP = 'Olá! Vi o site da Casa Canária...';
 ```
 
-Com `WHATSAPP` vazio, o botão de WhatsApp simplesmente não aparece.
+Todos os botões da página levam para esse WhatsApp, já com a mensagem pronta.
+Com `WHATSAPP` vazio, os botões somem.
 
 Para trocar fotos, legendas ou a ordem da galeria, edite o array `FOTOS` no mesmo arquivo.
 
@@ -49,7 +50,7 @@ O GitHub Pages republica sozinho em cerca de um minuto.
 
 ## Usar um domínio próprio
 
-1. Compre o domínio (ex.: `casacaju.com.br` no [registro.br](https://registro.br)).
+1. Compre o domínio (ex.: `casacanaria.com.br` no [registro.br](https://registro.br)).
 2. No painel de DNS do domínio, crie os registros:
 
    | Tipo  | Nome | Valor |
@@ -64,7 +65,7 @@ O GitHub Pages republica sozinho em cerca de um minuto.
    o `robots.txt` e todas as URLs absolutas do `index.html`:
 
    ```bash
-   ./trocar-dominio.sh casacaju.com.br
+   ./trocar-dominio.sh casacanaria.com.br
    git add -A && git commit -m "aponta para domínio próprio" && git push
    ```
 

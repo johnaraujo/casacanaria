@@ -1,19 +1,15 @@
 /* ==========================================================================
-   Casa Caju — interações da página
+   Casa Canária — interações da página
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    CONFIGURAÇÃO — edite apenas estas duas linhas
    -------------------------------------------------------------------------- */
 
-// Link do anúncio no Airbnb
-const AIRBNB = 'https://www.airbnb.com.br/rooms/33034679';
+// WhatsApp de contato, formato internacional só com números: 55 + DDD + número.
+const WHATSAPP = '5582999767094';
 
-// WhatsApp em formato internacional, só números: 55 + DDD + número.
-// Ex.: '5582999998888'. Deixe vazio ('') para esconder o botão de WhatsApp.
-const WHATSAPP = '';
-
-const MENSAGEM_WHATSAPP = 'Olá! Vi o site da Casa Caju e gostaria de saber sobre a disponibilidade.';
+const MENSAGEM_WHATSAPP = 'Olá! Vi o site da Casa Canária e gostaria de saber sobre a disponibilidade.';
 
 /* --------------------------------------------------------------------------
    Fotos da galeria
@@ -81,6 +77,8 @@ const ICONES = {
   geladeira:'<rect x="5.5" y="2.5" width="13" height="19" rx="2.5"/><path d="M5.5 10h13M8.5 6v2M8.5 13v3"/>',
   porta:    '<path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><circle cx="15.5" cy="12.5" r="1"/>',
   planta:   '<path d="M12 21v-8"/><path d="M12 13c0-3.5-2.5-6-6-6 0 3.5 2.5 6 6 6z"/><path d="M12 13c0-4 2.8-7 6.5-7 0 4-2.8 7-6.5 7z"/><path d="M8 21h8"/>',
+  banheiro: '<path d="M3.5 12.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M6.5 12.5V5.2A2.2 2.2 0 0 1 8.7 3c1.2 0 2.2 1 2.2 2.2"/><path d="M9 6.2h3.8M6 19.5l-1 1.7M18 19.5l1 1.7"/>',
+  lavabo:   '<path d="M6 10.5h12v4.5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4z"/><path d="M12 19v2.2M9.5 21.5h5"/><path d="M12 10.5V7a2.5 2.5 0 0 1 2.5-2.5h1.8a1.7 1.7 0 0 1 1.7 1.7V8"/>',
   sol:      '<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>'
 };
 
@@ -96,8 +94,10 @@ const COMODIDADES = [
   ['lavar',     'Máquina de lavar'],
   ['ferro',     'Ferro de passar e varal'],
   ['cama',      'Roupa de cama, toalhas e itens básicos'],
+  ['banheiro',  'Banheiro privativo em cada suíte'],
+  ['lavabo',    'Lavabo com mictório na área externa'],
   ['carro',     'Estacionamento gratuito no local'],
-  ['praia',     'Acesso à praia a 500 m'],
+  ['praia',     'Acesso à praia a 400 m'],
   ['cerca',     'Quintal privativo totalmente cercado'],
   ['rede',      'Rede e móveis na área externa'],
   ['chuveiro',  'Chuveiro externo'],
@@ -110,12 +110,6 @@ const COMODIDADES = [
 /* --------------------------------------------------------------------------
    Montagem da página
    -------------------------------------------------------------------------- */
-
-document.querySelectorAll('[data-airbnb]').forEach(function (a) {
-  a.href = AIRBNB;
-  a.target = '_blank';
-  a.rel = 'noopener';
-});
 
 document.querySelectorAll('[data-whatsapp]').forEach(function (a) {
   if (!WHATSAPP) { a.remove(); return; }

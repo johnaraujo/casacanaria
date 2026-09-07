@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Casa Caju — folha de estilo
+   Casa Canária — folha de estilo
    Mobile-first. Paleta inspirada no cajueiro: areia, caju e folha.
    ========================================================================== */
 
@@ -221,7 +221,7 @@ a { color: inherit; }
 }
 
 .hero__titulo {
-  font-size: clamp(3.4rem, 17vw, 7.5rem);
+  font-size: clamp(2.9rem, 14.5vw, 7rem);
   font-weight: 700;
   line-height: .92;
   margin: 0 0 .18em;
