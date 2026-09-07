@@ -134,8 +134,9 @@ a { color: inherit; }
 }
 .btn--fantasma:hover { background: rgba(36,31,27,.05); border-color: rgba(36,31,27,.4); }
 
-.btn--zap { border-color: rgba(37,211,102,.55); color: #0d6b34; }
-.btn--zap:hover { background: rgba(37,211,102,.12); }
+/* o tom verde só faz sentido no botão vazado; no sólido o texto segue branco */
+.btn--fantasma.btn--zap { border-color: rgba(37,211,102,.55); color: #0d6b34; }
+.btn--fantasma.btn--zap:hover { background: rgba(37,211,102,.12); border-color: rgba(37,211,102,.9); }
 
 /* ---------- Topo ---------- */
 

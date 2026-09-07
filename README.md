@@ -3,7 +3,7 @@
 Site de divulgação da **Casa Canária** — casa de praia por temporada em Barra de São Miguel, Alagoas.
 
 🔗 **No ar:** https://casacanaria.com.br/
-💬 **Contato:** WhatsApp (82) 99976-7094
+💬 **Contato:** WhatsApp (82) 99933-7253
 
 ---
 
@@ -45,7 +45,7 @@ Site estático puro: sem build, sem dependências. É só editar e dar `git push
 Tudo o que muda com frequência está no topo do `script.js`:
 
 ```js
-const WHATSAPP = '5582999767094';   // 55 + DDD + número
+const WHATSAPP = '5582999337253';   // 55 + DDD + número
 const MENSAGEM_WHATSAPP = 'Olá! Vi o site da Casa Canária...';
 ```
 

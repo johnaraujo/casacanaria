@@ -17,6 +17,7 @@ import sys
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://casacanaria.com.br"
+AIRBNB = "https://www.airbnb.com/rooms/33034679"
 
 # Cada entrada: trecho em português -> (inglês, espanhol).
 # A ordem importa: trechos mais longos são substituídos primeiro.
@@ -90,9 +91,9 @@ TRADUCOES = {
         "Sí, las mascotas son bienvenidas en Casa Canária.",
     ),
     "Como faço a reserva?": ("How do I book?", "¿Cómo hago la reserva?"),
-    "A reserva é feita direto com a gente pelo WhatsApp (82) 99976-7094. É só chamar com as datas desejadas que confirmamos a disponibilidade e as condições.": (
-        "You book directly with us on WhatsApp at +55 82 99976-7094. Just message us with your dates and we will confirm availability and terms.",
-        "La reserva se hace directamente con nosotros por WhatsApp al +55 82 99976-7094. Escríbanos con sus fechas y le confirmamos la disponibilidad y las condiciones.",
+    "A reserva é feita direto com a gente pelo WhatsApp (82) 99933-7253. É só chamar com as datas desejadas que confirmamos a disponibilidade e as condições.": (
+        "You book directly with us on WhatsApp at +55 82 99933-7253. Just message us with your dates and we will confirm availability and terms.",
+        "La reserva se hace directamente con nosotros por WhatsApp al +55 82 99933-7253. Escríbanos con sus fechas y le confirmamos la disponibilidad y las condiciones.",
     ),
     "Qual o horário de check-in e checkout?": (
         "What are the check-in and check-out times?",
@@ -441,9 +442,9 @@ TRADUCOES = {
         "Barra de São Miguel · Alagoas · Brazil",
         "Barra de São Miguel · Alagoas · Brasil",
     ),
-    "Casa Canária · Barra de São Miguel, Alagoas · Contato pelo WhatsApp (82) 99976-7094": (
-        "Casa Canária · Barra de São Miguel, Alagoas, Brazil · WhatsApp +55 82 99976-7094",
-        "Casa Canária · Barra de São Miguel, Alagoas, Brasil · WhatsApp +55 82 99976-7094",
+    "Casa Canária · Barra de São Miguel, Alagoas · Contato pelo WhatsApp (82) 99933-7253": (
+        "Casa Canária · Barra de São Miguel, Alagoas, Brazil · WhatsApp +55 82 99933-7253",
+        "Casa Canária · Barra de São Miguel, Alagoas, Brasil · WhatsApp +55 82 99933-7253",
     ),
     'aria-label="Galeria de fotos"': ('aria-label="Photo gallery"', 'aria-label="Galería de fotos"'),
     'aria-label="Fechar galeria"': ('aria-label="Close gallery"', 'aria-label="Cerrar galería"'),
@@ -465,12 +466,20 @@ def gerar(codigo, cfg):
     html = origem
     i = cfg["indice"]
 
+    # Duas passadas com marcadores: a primeira troca cada trecho em português
+    # por um marcador único, a segunda troca o marcador pela tradução. Sem isso,
+    # uma regra curta acabaria reescrevendo texto que outra já traduziu.
     faltando = []
-    for pt, traducoes in sorted(TRADUCOES.items(), key=lambda kv: -len(kv[0])):
+    marcadores = {}
+    for n, (pt, traducoes) in enumerate(sorted(TRADUCOES.items(), key=lambda kv: -len(kv[0]))):
         if pt not in html:
             faltando.append(pt[:60])
             continue
-        html = html.replace(pt, traducoes[i])
+        marca = "\x00T%d\x00" % n
+        marcadores[marca] = traducoes[i]
+        html = html.replace(pt, marca)
+    for marca, texto in marcadores.items():
+        html = html.replace(marca, texto)
 
     # idioma do documento e prefixo dos arquivos
     html = html.replace('<html lang="pt-BR">', '<html lang="%s">' % cfg["lang"])
@@ -502,6 +511,22 @@ def gerar(codigo, cfg):
     html = html.replace('href="es/"', 'href="../es/"')
     html = html.replace('CURRENT_PLACEHOLDER', 'class="idiomas__atual" aria-current="page" href="./"')
     html = html.replace('lang="pt-BR" aria-current="page"', 'lang="pt-BR"')
+
+    # Nas versões internacionais, o Airbnb entra como segunda via de contato:
+    # quem vem de fora costuma preferir reservar pela plataforma.
+    rotulo = "Book on Airbnb" if codigo == "en" else "Reservar en Airbnb"
+    rodape = "Airbnb listing" if codigo == "en" else "Anuncio en Airbnb"
+    link = ('<a class="btn btn--fantasma btn--grande" href="%s" target="_blank" rel="noopener">%s</a>'
+            % (AIRBNB, rotulo))
+    marca_cta = '<a class="btn btn--grande btn--zap" data-whatsapp href="#">'
+    pos = html.find(marca_cta)
+    assert pos >= 0, "botão do WhatsApp do CTA não encontrado"
+    fim = html.index("</a>", pos) + 4
+    html = html[:fim] + "\n      " + link + html[fim:]
+
+    html = html.replace('<a data-whatsapp href="#">WhatsApp</a>',
+                        '<a data-whatsapp href="#">WhatsApp</a>\n      '
+                        '<a href="%s" target="_blank" rel="noopener">%s</a>' % (AIRBNB, rodape))
 
     destino = os.path.join(RAIZ, codigo)
     os.makedirs(destino, exist_ok=True)
