@@ -194,12 +194,25 @@ a { color: inherit; }
 }
 .idiomas a:hover { color: var(--tinta); background: rgba(36,31,27,.06); }
 .idiomas .idiomas__atual { color: var(--folha); background: rgba(19,81,60,.09); }
-@media (max-width: 599px) { .topo .idiomas { display: none; } }
+/* No celular o seletor precisa continuar alcançável ao rolar: o do hero sai
+   de vista assim que a pessoa desce. Encolhemos marca, seletor e botão para
+   os três caberem lado a lado. */
+@media (max-width: 620px) {
+  .topo { gap: 8px; padding-inline: 14px; }
+  .topo__marca { font-size: 1.02rem; }
+  .topo .idiomas { gap: 0; }
+  .topo .idiomas a { font-size: .72rem; padding: 5px 6px; letter-spacing: 0; }
+  .topo .btn--pequeno { padding: 9px 15px; font-size: .82rem; }
+}
+@media (max-width: 359px) {
+  .topo__marca { font-size: .92rem; }
+  .topo .idiomas a { padding: 5px 4px; }
+}
 
 .idiomas--hero {
   position: absolute;
   z-index: 2;
-  top: max(14px, env(safe-area-inset-top));
+  top: calc(14px + env(safe-area-inset-top));
   right: var(--pad-lat);
   gap: 3px;
   padding: 4px;
