@@ -91,9 +91,9 @@ TRADUCOES = {
         "Sí, las mascotas son bienvenidas en Casa Canária.",
     ),
     "Como faço a reserva?": ("How do I book?", "¿Cómo hago la reserva?"),
-    "A reserva é feita direto com a gente pelo WhatsApp (82) 99933-7253. É só chamar com as datas desejadas que confirmamos a disponibilidade e as condições.": (
-        "You book directly with us on WhatsApp at +55 82 99933-7253. Just message us with your dates and we will confirm availability and terms.",
-        "La reserva se hace directamente con nosotros por WhatsApp al +55 82 99933-7253. Escríbanos con sus fechas y le confirmamos la disponibilidad y las condiciones.",
+    "A reserva é feita direto com a gente pelo WhatsApp (82) 99976-7094. É só chamar com as datas desejadas que confirmamos a disponibilidade e as condições.": (
+        "You book directly with us on WhatsApp at +55 82 99976-7094. Just message us with your dates and we will confirm availability and terms.",
+        "La reserva se hace directamente con nosotros por WhatsApp al +55 82 99976-7094. Escríbanos con sus fechas y le confirmamos la disponibilidad y las condiciones.",
     ),
     "Qual o horário de check-in e checkout?": (
         "What are the check-in and check-out times?",
@@ -442,9 +442,9 @@ TRADUCOES = {
         "Barra de São Miguel · Alagoas · Brazil",
         "Barra de São Miguel · Alagoas · Brasil",
     ),
-    "Casa Canária · Barra de São Miguel, Alagoas · Contato pelo WhatsApp (82) 99933-7253": (
-        "Casa Canária · Barra de São Miguel, Alagoas, Brazil · WhatsApp +55 82 99933-7253",
-        "Casa Canária · Barra de São Miguel, Alagoas, Brasil · WhatsApp +55 82 99933-7253",
+    "Casa Canária · Barra de São Miguel, Alagoas · Contato pelo WhatsApp (82) 99976-7094": (
+        "Casa Canária · Barra de São Miguel, Alagoas, Brazil · WhatsApp +55 82 99976-7094",
+        "Casa Canária · Barra de São Miguel, Alagoas, Brasil · WhatsApp +55 82 99976-7094",
     ),
     'aria-label="Galeria de fotos"': ('aria-label="Photo gallery"', 'aria-label="Galería de fotos"'),
     'aria-label="Fechar galeria"': ('aria-label="Close gallery"', 'aria-label="Cerrar galería"'),
