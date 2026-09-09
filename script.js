@@ -50,7 +50,7 @@ const T = UI[L];
 
 const ARQUIVOS = [
   '03-area-gourmet', '01-piscina-coqueiros', '02-jardim-arvore',
-  '34-praia-areia', '35-praia-recifes', '36-condominio-quadra',
+  '34-praia-areia', '35-praia-recifes',
   '04-piscina-jardim', '05-espreguicadeiras', '06-area-lazer',
   '07-varanda-coberta', '08-estar-externo', '09-churrasqueira',
   '10-varanda-jantar', '11-mesa-externa', '12-mesa-posta',
@@ -70,7 +70,6 @@ const LEGENDAS = {
     'Jardim com árvore frondosa e piscina',
     'A praia de Barra de São Miguel, a 400 m da casa',
     'Mar calmo protegido pelos recifes, em frente à casa',
-    'Quadra poliesportiva na área comum do condomínio',
     'Piscina em meio ao jardim tropical',
     'Espreguiçadeiras e guarda-sol na beira da piscina',
     'Área de lazer coberta ao lado da piscina',
@@ -108,7 +107,6 @@ const LEGENDAS = {
     'Garden with a large shade tree and the pool',
     'Barra de São Miguel beach, 400 m from the house',
     'Calm sea sheltered by the reefs, right in front',
-    'Sports court in the gated community shared area',
     'Pool set in the tropical garden',
     'Sun loungers and umbrella by the pool',
     'Covered lounge area next to the pool',
@@ -146,7 +144,6 @@ const LEGENDAS = {
     'Jardín con árbol frondoso y piscina',
     'La playa de Barra de São Miguel, a 400 m de la casa',
     'Mar tranquilo protegido por los arrecifes, frente a la casa',
-    'Cancha polideportiva en el área común del condominio',
     'Piscina en medio del jardín tropical',
     'Tumbonas y sombrilla junto a la piscina',
     'Zona de ocio cubierta al lado de la piscina',
@@ -202,7 +199,6 @@ const ICONES = {
   praia:    '<path d="M2 20c2 0 2-1.2 4-1.2s2 1.2 4 1.2 2-1.2 4-1.2 2 1.2 4 1.2 2-1.2 4-1.2"/><path d="M12.5 20V9"/><path d="M4 9h17c0-4-4-7-8.5-7C9 2 5.8 4.6 4 9z"/>',
   pet:      '<circle cx="7" cy="8" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="17" cy="8" r="2"/><path d="M12 11c-2.8 0-5 2.5-5 5 0 2 1.5 3 3 3 .9 0 1.4-.5 2-.5s1.1.5 2 .5c1.5 0 3-1 3-3 0-2.5-2.2-5-5-5z"/>',
   cerca:    '<path d="M4 21V9l3-3 3 3v12M14 21V9l3-3 3 3v12"/><path d="M2 12h20M2 16h20"/>',
-  quadra:   '<rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M12 5v14"/><path d="M2.5 9.5h3v5h-3M21.5 9.5h-3v5h3"/><circle cx="12" cy="12" r="2.2"/>',
   mesa:     '<path d="M3 9h18M4.5 9l-1 12M19.5 9l1 12M7.5 9v6M16.5 9v6"/><path d="M5 6h14a2 2 0 0 1 0 3H5a2 2 0 0 1 0-3z"/>',
   rede:     '<path d="M3.5 4v5.5M20.5 4v5.5"/><path d="M3.5 9c0 6.5 3.8 9.5 8.5 9.5s8.5-3 8.5-9.5"/><path d="M3.5 9h17M8 9.6v5.4M12 9.6v7M16 9.6v5.4"/>',
   chuveiro: '<path d="M12 3.5v3"/><path d="M6 10.5a6 6 0 0 1 12 0z"/><path d="M8 14v1.8M12 14v3M16 14v1.8M9.8 18.5v1.6M14.2 18.5v1.6"/>',
@@ -219,7 +215,7 @@ const ICONES = {
 const ORDEM_COMODIDADES = [
   'piscina', 'fogo', 'ar', 'wifi', 'cozinha', 'geladeira', 'mesa', 'tv',
   'lavar', 'ferro', 'cama', 'banheiro', 'lavabo', 'carro', 'praia',
-  'cerca', 'quadra', 'rede', 'chuveiro', 'planta', 'porta', 'pet', 'sol'
+  'cerca', 'rede', 'chuveiro', 'planta', 'porta', 'pet', 'sol'
 ];
 
 const COMODIDADES = {
@@ -230,7 +226,7 @@ const COMODIDADES = {
     'Ferro de passar e varal', 'Roupa de cama, toalhas e itens básicos',
     'Banheiro privativo em cada suíte', 'Lavabo com mictório na área externa',
     'Estacionamento gratuito no local', 'Acesso à praia a 400 m',
-    'Quintal privativo totalmente cercado', 'Área comum do condomínio com quadra e campo',
+    'Quintal privativo totalmente cercado',
     'Rede e móveis na área externa', 'Chuveiro externo', 'Vista para o jardim',
     'Entrada privativa', 'Animais de estimação são bem-vindos', 'Área de jantar ao ar livre'
   ],
@@ -241,7 +237,7 @@ const COMODIDADES = {
     'Iron and drying rack', 'Linens, towels and basics',
     'Private bathroom in every bedroom', 'Outdoor powder room with urinal',
     'Free parking on site', 'Beach access 400 m away',
-    'Fully fenced private yard', 'Shared grounds with sports court and field',
+    'Fully fenced private yard',
     'Hammock and outdoor furniture', 'Outdoor shower', 'Garden view',
     'Private entrance', 'Pets are welcome', 'Outdoor dining area'
   ],
@@ -252,7 +248,7 @@ const COMODIDADES = {
     'Plancha y tendedero', 'Ropa de cama, toallas y artículos básicos',
     'Baño privado en cada habitación', 'Aseo exterior con urinario',
     'Aparcamiento gratuito en el lugar', 'Acceso a la playa a 400 m',
-    'Patio privado totalmente vallado', 'Zona común del condominio con cancha y campo',
+    'Patio privado totalmente vallado',
     'Hamaca y muebles en el exterior', 'Ducha exterior', 'Vista al jardín',
     'Entrada privada', 'Se admiten mascotas', 'Zona de comedor al aire libre'
   ]

@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://casacanaria.com.br/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://casacanaria.com.br/"/>
@@ -47,11 +47,10 @@
     <image:image><image:loc>https://casacanaria.com.br/fotos/34-praia-areia-larga.jpg</image:loc></image:image>
     <image:image><image:loc>https://casacanaria.com.br/fotos/34-praia-areia.jpg</image:loc></image:image>
     <image:image><image:loc>https://casacanaria.com.br/fotos/35-praia-recifes.jpg</image:loc></image:image>
-    <image:image><image:loc>https://casacanaria.com.br/fotos/36-condominio-quadra.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://casacanaria.com.br/en/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://casacanaria.com.br/"/>
@@ -61,7 +60,7 @@
   </url>
   <url>
     <loc>https://casacanaria.com.br/es/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://casacanaria.com.br/"/>

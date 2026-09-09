@@ -152,9 +152,9 @@ TRADUCOES = {
         "The whole house, just for your group",
         "Una casa entera solo para tu grupo",
     ),
-    "Excelente casa em condomínio fechado com segurança 24 horas por dia e apenas 400 metros da praia. Ampla área de lazer com <strong>piscina privativa</strong>, churrasqueira, varanda coberta e garagem — e o condomínio ainda tem quadra poliesportiva e campo na área comum.": (
-        "A great house in a gated community with 24-hour security, just 400 metres from the beach. Large leisure area with a <strong>private pool</strong>, barbecue, covered veranda and garage — and the community also has a sports court and a football field in its shared grounds.",
-        "Excelente casa en un condominio cerrado con seguridad las 24 horas y a solo 400 metros de la playa. Amplia zona de ocio con <strong>piscina privada</strong>, parrilla, terraza cubierta y garaje — y el condominio cuenta además con cancha polideportiva y campo en la zona común.",
+    "Excelente casa em condomínio fechado com segurança 24 horas por dia e apenas 400 metros da praia. Ampla área de lazer com <strong>piscina privativa</strong>, churrasqueira, varanda coberta e garagem.": (
+        "A great house in a gated community with 24-hour security, just 400 metres from the beach. Large leisure area with a <strong>private pool</strong>, barbecue, covered veranda and garage.",
+        "Excelente casa en un condominio cerrado con seguridad las 24 horas y a solo 400 metros de la playa. Amplia zona de ocio con <strong>piscina privada</strong>, parrilla, terraza cubierta y garaje.",
     ),
     "<strong>Todos os quartos são suítes</strong>, com ar-condicionado split e banheiro privativo com chuveiro elétrico. Na área externa há ainda um lavabo com mictório, para quem está na piscina. A cozinha é completa, com utensílios para você cozinhar à vontade. Cabem até 10 pessoas com conforto — e os pets são bem-vindos.": (
         "<strong>Every bedroom is en suite</strong>, with air conditioning and its own bathroom. Outdoors there is an extra powder room with a urinal, handy for whoever is by the pool. The kitchen is fully equipped, with everything you need to cook. It sleeps up to 10 people comfortably — and pets are welcome.",
@@ -165,10 +165,6 @@ TRADUCOES = {
         "Condominio cerrado, portería 24 h",
     ),
     "400 m da praia, a pé": ("400 m from the beach, on foot", "A 400 m de la playa, a pie"),
-    "Área comum com quadra e campo": (
-        "Shared grounds with court and field",
-        "Zona común con cancha y campo",
-    ),
     "Aceita animais de estimação": ("Pets allowed", "Se admiten mascotas"),
     "Estacionamento gratuito no local": ("Free parking on site", "Aparcamiento gratuito"),
     "Jardim com árvore frondosa e piscina ao fundo": (
